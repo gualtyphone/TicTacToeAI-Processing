@@ -16,7 +16,7 @@ class NeuralNet{
     inLayer.inputBoard(state);
     midLayer.input(inLayer, inMid);
     outLayer.input(midLayer, midOut);
-    return outLayer.bestNode();
+    return outLayer.bestNode(state);
   }
   
   

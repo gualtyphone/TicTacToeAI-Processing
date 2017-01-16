@@ -21,7 +21,7 @@ class Button{
     rect(minX, minY, maxX, maxY);
     fill(255);
     stroke(255);
-    textSize(56);
+    textSize(30);
     textAlign(CENTER, CENTER);
     text(txt, minX-((minX-maxX)/2), minY-((minY-maxY)/2));
   }

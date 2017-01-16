@@ -122,16 +122,36 @@ class Layer{
     }
   }
   
-  int bestNode(){
+  int bestNode(int[] state){
+    
     int best = 0;
-    float worldRecord = 0;
+    float worldRecord = -100;
     for (int i = 0; i < numNodes; i++){
       if(nodes[i].out() > worldRecord){
-        best = i;
-        worldRecord = nodes[i].out();
+        if (state[i] == 0){
+          best = i;
+          worldRecord = nodes[i].out();
+        }
       }
     }
     return best;
+    
+    /*
+    float[] sortedOutVal = new float[9];
+    for (int i = 0; i < numNodes; i++){
+      sortedOutVal[i] = nodes[i].out();
+    }
+    for (int j = 0; j < whichNode; j++){
+      int best = 0;
+      float worldRecord = -100;
+      for (int i = 0; i < numNodes; i++){
+        if(nodes[i].out() > worldRecord){
+          best = i;
+          worldRecord = sortedOutVal[i];
+        }
+      }
+      sortedOutVal[best] = -100;
+    }
+    */
   }
-  
 }
